@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos mis servicios</title>
+    <link rel="stylesheet" href="mis-servicios.css">
+    <style>
+        /* Estilo para la imagen de fondo */
+        #imagen-fondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Para que esté detrás del contenido */
+        }
+        /* Estilo para el botón de Volver */
+        .btn-volver {
+            position: fixed;
+            bottom: 600px;
+            left: 2px;
+            background: #25d366; /* Color verde de WhatsApp */
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.3s;
+            border: 1px solid white;
+            z-index: 100; /* Asegura que esté por encima de todo */
+        }
+        .btn-volver:hover {
+            background: rgba(9, 230, 193, 0.9);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Imagen de fondo (por defecto para escritorio) -->
+    <img id="imagen-fondo" src="mis-servicios-pc.png" alt="Fondo de la lista de servicios">
+
+    <!-- Contenedor de las categorías -->
+    <section id="contenido" class="course-container">
+        <!-- Tarjeta de curso -->
+        <div class="course-card categoria">
+            <div class="course-image">
+                <img src="energia-mov.jpeg" alt="Reparación">
+            </div>
+            <div class="details-course">
+                <h3>Energía en movimiento</h3>
+                <button onclick="window.location.href='energia-mov.html'">¡Quiero info!</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta de curso -->
+        <div class="course-card categoria">
+            <div class="course-image">
+                <img src="energia-vital.jpeg" alt="Belleza">
+            </div>
+            <div class="details-course">
+                <h3>Energía vital & Bienestar desde adentro</h3>
+                <button onclick="window.location.href='energia-adentro.html'">¡Quiero info!</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta de curso -->
+        <div class="course-card categoria">
+            <div class="course-image">
+                <img src="couching.jpeg" alt="Oficios">
+            </div>
+            <div class="details-course">
+                <h3>Coach holístico personalizado</h3>
+                <button onclick="window.location.href='coach-holistico.html'">¡Quiero info!</button>
+            </div>
+        </div>
+
+    
+        <!-- Tarjeta de curso -->
+        <div class="course-card categoria">
+            <div class="course-image">
+                <img src="ritual-belleza.jpeg" alt="Habilidades">
+            </div>
+            <div class="details-course">
+                <h3>Ritual de belleza integral</h3>
+                <button onclick="window.location.href='ritual-belleza.html'">¡Quiero info!</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta de curso -->
+        <div class="course-card categoria">
+            <div class="course-image">
+                <img src="chakras.jpg" alt="Desarrollo">
+            </div>
+            <div class="details-course">
+                <h3>Armonización de chakras</h3>
+                <button onclick="window.location.href='chakras.html'">¡Quiero info!</button>
+            </div>
+        </div>
+
+        <!-- Tarjeta de curso -->
+        <div class="course-card categoria">
+            <div class="course-image">
+                <img src="servicios-sueltos.jpeg" alt="Desarrollo">
+            </div>
+            <div class="details-course">
+                <h3>Servicios varios</h3>
+                <button onclick="window.location.href='servicios-sueltos.html'">¡Quiero info!</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de Volver -->
+    <a href="index.html" class="btn-volver">&#8592; Volver</a>
+
+    <script>
+        // Espera para mostrar el contenido después de que la imagen haya cargado
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('contenido').classList.add('mostrar');
+            }, 500);
+        }
+
+        // Cambiar la imagen de fondo para dispositivos móviles
+        if (window.innerWidth <= 720) {
+            document.getElementById("imagen-fondo").src = "mis-servicios.jpg"; // Imagen para móvil
+        }
+    </script>
+</body>
+</html>

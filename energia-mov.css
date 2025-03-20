@@ -1,0 +1,87 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1b1b1b;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    background-image: url('mis-servicios-pc.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    color: #ffffff
+    ;
+}
+
+p, ul {
+    margin: 10px 0;
+    text-align: left;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.whatsapp-button:hover {
+    background-color: #1ebe57;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('mis-servicios.jpg');
+        background-size: cover;
+        background-attachment: scroll;
+    }
+}
+.btn-volver {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25d366; /* Rojo para mejor visibilidad */
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.3s;
+    z-index: 100; /* Asegura que esté por encima de todo */
+    border: 0.6px solid white; /* Delineado blanco */
+}
+.btn-volver:hover {
+    background: rgba(9, 230, 193, 0.9);
+    transform: scale(1.1);
+}

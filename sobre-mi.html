@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí - Leticia Carabajal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .slider-container {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        .slider img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            color: rgb(51, 9, 9);
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            background: rgba(22, 22, 22, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            color: rgb(255, 231, 231);
+        }
+        .btn-contact {
+            display: block;
+            background-color: #25d366;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+            border: 0.6px solid white;
+        }
+        .btn-contact:hover {
+            background-color: #128c7e;
+        }
+        .btn-volver {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s, transform 0.3s;
+            z-index: 100;
+            border: 0.6px solid white;
+        }
+        .btn-volver:hover {
+            background: rgba(9, 230, 193, 0.9);
+            transform: scale(1.1);
+        }
+
+        /* Establece un fondo diferente en pantallas grandes */
+        @media (min-width: 1024px) {
+            .slider img {
+                content: url('sobre-mi.png');
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <img src="imagen1.png" alt="Imagen 1">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <h1>Sobre mí</h1>
+            <p>Mi nombre es Letu, y mi camino empezó en el mundo de la estética. Durante varios años, tuve mi propia estética y trabajé ayudando a las personas a sentirse mejor con su apariencia. Sin embargo, a medida que fui creciendo profesionalmente, me di cuenta de que mi verdadera pasión iba más allá de lo físico.</p>
+            <p>Fue así como, poco a poco, comencé a formarme en distintas disciplinas como el yoga, el tapping, la terapia holística y el coaching, con el objetivo de ofrecer un enfoque más completo a quienes me buscan. Mi objetivo ahora es acompañarte en tu proceso de bienestar integral, donde el cuerpo, la mente y las emociones estén en equilibrio.</p>
+            <p>Hoy en día, mis sesiones combinan herramientas de sanación energética, movimiento, autocuidado y nutrición energética, para que puedas sentirte bien no solo por fuera, sino también por dentro. Mi misión es ayudarte a sanar, liberar tensiones y recuperar tu energía para que puedas vivir con más vitalidad y equilibrio.</p>
+            <a href="https://wa.me/5492227629411?text=¡Quiero%20conocer%20más%20sobre%20tus%20sesiones!" class="btn-contact">¡Contáctame por WhatsApp!</a>
+        </div>
+    </div>
+    
+    <a href="index.html" class="btn-volver">&#8592; Volver</a>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider img');
+        const totalImages = images.length;
+
+        function moveSlider() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            document.querySelector('.slider').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        setInterval(moveSlider, 3000);
+    </script>
+</body>
+</html>
