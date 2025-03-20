@@ -48,27 +48,23 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-}
-
-.course-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    height: auto; /* Deja que la altura se ajuste al contenido */
 }
 
 /* Imagen dentro de la tarjeta */
 .course-image {
     width: 100%;
-    height: 200px; /* Tamaño fijo para que todas las imágenes sean uniformes en PC */
-    overflow: hidden;
+    height: 250px; /* Altura fija para que las tarjetas queden parejas */
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .course-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Asegura que la imagen se ajuste sin recortarse y mantenga su relación de aspecto */
 }
 
 /* Detalles del curso */
@@ -121,7 +117,7 @@ button:hover {
         font-size: 1.1em;
     }
     .course-image {
-        height: auto; /* Para evitar distorsión en celulares */
+        height: auto; /* Evita distorsión en celulares */
     }
 }
 
